@@ -70,8 +70,28 @@ Now we are ready to execute openlane commands. In this workshop **picorv32a** ri
 
 `prep -design picorv32a`
 
-This merges the technology level and cell level LEFs so that it need not to refer 2 different files. It creates the set up file under **runs** directory of **picorv32a** design.
+This merges the technology level and cell level LEFs so that it need not to refer 2 different files. 
 
 ![Image1](/Day1/1.PNG)
+
+It creates the set up file under **runs** directory of **picorv32a** design will all empty folders except tmp folder. As we proceed with each stage, files are created in respective folders.
+
 ![Image1](/Day1/2.PNG)
 
+Preparation is done, now run the synthesis. This will run the synthesis and internally uses **ABC** open-source tool for technology mapping.
+
+`run_synthesis`
+
+![Image1](/Day1/3.PNG)
+
+Synthesis takes the design in HDL and generates gate-level netlist under results folder
+
+![Image1](/Day1/4.PNG)
+
+And synthesis stage reports are generated under **reports** folder.
+
+![Image1](/Day1/5.PNG)
+
+
+## Day 2 - Understand importance of good floorplan vs bad floorplan and introduction to library cells
+### Objectives:
