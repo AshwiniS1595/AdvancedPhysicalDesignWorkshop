@@ -93,6 +93,7 @@ And synthesis stage reports are generated under **reports** folder.
 ![Image1](/Day1/5.PNG)
 
 
+
 ## Day 2 - Understand importance of good floorplan vs bad floorplan and introduction to library cells
 ### Objectives:
 * Chip Floor planning considerations
@@ -130,3 +131,44 @@ To see the layout after floor plan in magic
 
 ![Image](/Day2/6.PNG)
 
+Next stage is PLACEMENT - integrates those netlist physical cells to floorplan(has properly designed IO ports) and it ensures that it is not affecting preplaced layout and places the cells near to thier respective input and output pins as much as possible.
+Optimize Placement estimates the wire length and capacitance, based on that inserts buffers to maintain the signal integrity. The feasibilty of placement is verified by Setup timing Analysis (STA).
+Placement occurs in 2 stages:
+1. **Global Placement** - Coarse placement with no legalisation
+2. **Detailed Placement** - With legalisation
+
+To run placement,
+
+`run_placement`
+
+![Image](/Day2/7.PNG)
+
+This creates the defination file under results of placement and the design sfter placement looks as,
+![Image](/Day2/8.PNG)
+
+![Image](/Day2/9.PNG)
+
+And it's zoomed view is,
+
+![Image](/Day2/10.PNG)
+
+"Gates or Cells" is one thing i,e common across all the stages.
+Library Characterization is very important because the collection of gates area is refered to library. We need to model these gates such that it is understood by EDA tool.
+Library consists of standard cells with different functionality, with didifferent sizes i,e drive strength and different threshold voltage.
+
+Inverter Cell Design flow has 3 part:
+1. Inputs: PDKs which has DRC, LVS rules, SPICE models, library and user defined specifications.
+2. Design Steps: 
+        * Circuit Design - Model th PMOS and NMOS transistor in order to meet library requirements.
+        * Layout Design - Implements the  function in PMOS and NMOS and get the graph in Euler's path and stick diagram. Convert this stick diagram to layout design adhering to rules given in PDKs
+        * Characterization - Helps to get timing, noise and power characterization information
+3. Outputs:
+        * CDL (Circuit description language)
+        * GDSII, LEF, extracted spice netlist(.cir)
+        * Timing, noise and power libs funtion
+
+General timing characterization parameters are - timing characterization, propagation delay and transition time, output current waveform.
+
+
+
+## Day 3 - Design and characterize one library cell using Magic Layout tool and ngspice
