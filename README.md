@@ -95,3 +95,38 @@ And synthesis stage reports are generated under **reports** folder.
 
 ## Day 2 - Understand importance of good floorplan vs bad floorplan and introduction to library cells
 ### Objectives:
+* Chip Floor planning considerations
+* Library Binding and Placement
+* Cell design and characterization flows
+* General timing characterization parameters
+
+The outcome of synthesis stage is Netlist, which is the connectivity between all the components. The Next stage is FLOORPLAN, here, we wre interested in dimensions of standard cells not wires.
+The Utilization factor is defined as ratio of Area occupied by netlist to the Total area of the core. In practical utilization factor will be 0.5 to 0.6.
+The Aspect ratio is defined as the ratio of Height of the core to width of core. If Aspect ratio is 1, then chip is square else rectangle.
+Preplaced cells are macros or IPs which is a piece of complex logic and used multiple times.
+Decoupling capacitor is a huge capacitor, which is completely filled with charges and the voltage across decoupling capacitor is equal to to the voltage across power supply.
+
+`prep -design picorv32a -tag trial_run1`
+
+It will create the set up for synthesis under **trial_run1** folder, instead of generating new directory every time we run the set up command and can be use with **-overwrite** flag to to consider nw changes in config.tcl file
+
+Under configuration folder, all the TCL files has default configurations, it can overriden by configuration files under picorv32a design. And README.m has variables which are required for each stage. These variables are also known as switches.
+
+![Image](/Day2/1.PNG)
+
+In floor plan, we set the die area, core area, aspect ratio, utilization factor and we place the input-output cells, power distribution network and macro placement. To run floorplan:
+
+`run_floorplan`
+
+![Image](/Day2/2.PNG)
+
+This creates the defination file under results of floorplan, in which we can see the die area .
+
+![Image](/Day2/4.PNG)
+
+To see the layout after floor plan in magic
+
+![Image](/Day2/5.PNG)
+
+![Image](/Day2/6.PNG)
+
