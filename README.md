@@ -159,13 +159,13 @@ Library consists of standard cells with different functionality, with didifferen
 Inverter Cell Design flow has 3 part:
 1. Inputs: PDKs which has DRC, LVS rules, SPICE models, library and user defined specifications.
 2. Design Steps: 
-        * Circuit Design - Model th PMOS and NMOS transistor in order to meet library requirements.
-        * Layout Design - Implements the  function in PMOS and NMOS and get the graph in Euler's path and stick diagram. Convert this stick diagram to layout design adhering to rules given in PDKs
-        * Characterization - Helps to get timing, noise and power characterization information
+  * Circuit Design - Model th PMOS and NMOS transistor in order to meet library requirements.
+  * Layout Design - Implements the  function in PMOS and NMOS and get the graph in Euler's path and stick diagram. Convert this stick diagram to layout design adhering to rules given in PDKs
+  * Characterization - Helps to get timing, noise and power characterization information
 3. Outputs:
-        * CDL (Circuit description language)
-        * GDSII, LEF, extracted spice netlist(.cir)
-        * Timing, noise and power libs funtion
+  * CDL (Circuit description language)
+  * GDSII, LEF, extracted spice netlist(.cir)
+  * Timing, noise and power libs funtion
 
 General timing characterization parameters are - timing characterization, propagation delay and transition time, output current waveform.
 
