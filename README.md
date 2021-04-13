@@ -58,4 +58,5 @@ Each stage of RTL to GDSII flow has multiple sub-stages
 * Netgen - Performs LVS Checks
 * CVC - Performs Circuit Validity Checks
 
-Command to start Openlane with interactive flow i,e step by step process to understand and analyse each stage '$./flow.tcl -interactive' 
+Command to start Openlane with interactive flow i,e step by step process to understand and analyse each stage
+`$./flow.tcl -interactive` 
