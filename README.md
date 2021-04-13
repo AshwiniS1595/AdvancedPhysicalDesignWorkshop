@@ -59,4 +59,19 @@ Each stage of RTL to GDSII flow has multiple sub-stages
 * CVC - Performs Circuit Validity Checks
 
 Command to start Openlane with interactive flow i,e step by step process to understand and analyse each stage
-`$./flow.tcl -interactive` 
+
+`./flow.tcl -interactive` 
+
+To import all packages to run the openlane flow
+
+`package require openlane 0.9`
+
+Now we are ready to execute openlane commands. In this workshop **picorv32a** risc processor is considered as an example. To synthesize this processor design, we first need to set up the stage for design.
+
+`prep -design picorv32a`
+
+This merges the technology level and cell level LEFs so that it need not to refer 2 different files. It creates the set up file under **runs** directory of **picorv32a** design.
+
+![Image1](/Day1/1.PNG)
+![Image1](/Day1/2.PNG)
+
