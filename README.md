@@ -16,3 +16,10 @@
 * ##### Day 5 - Final steps for RTL2GDS
 
 ## Day1 – Inception of open-source EDA, OpenLANE and Sky130 PDK
+### Objectives:
+* How to talk to computers
+* SoC design and OpenLANE
+* Starting RISC-V SoC Reference design
+* Get familiar to open-source EDA tools
+
+Openlane is an open source physical design (ASIC) flow comprises of open source tools used in each stage of the design, which takes RTL code and skywater130 foundry PDKs as input and gives out routed layout design GDSII as output. Using the GDSII layout, masks are generated and these masks are used to implement the IP on silicon chip by the foundry.
